@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/DevSamuelV/PokemonDiscordServer#readme",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "Discord.js": "latest"
+    "discord.js": "^11.5.1"
   }
 }
