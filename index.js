@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = Discord.Client();
+const client = new Discord.Client();
 
 const PREFIX = "~";
 const DELAY  = 5000;
@@ -22,7 +22,7 @@ client.on('message', message => {
            break;
 
        case 'mods':
-           const mods = ["Claire Espeon", "Developer"];
+           let mods = ["Claire Espeon", "Developer"];
 
            message.send(`Here's all of the listed mods ${mods}`);
            break;
@@ -57,3 +57,8 @@ client.on('message', message => {
 });
 
 client.login(TOKEN);
+
+client.on('ready',() => {
+    console.trace("Bot Online");
+    console.warn("Bot Logedin And Running");
+});
