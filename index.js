@@ -4,6 +4,13 @@ const client = new Discord.Client();
 const PREFIX = "~";
 const DELAY  = 5000;
 const TOKEN = "{Your Token Here}";
+const VERSION = "1.0";
+
+let COMMANDS = [
+  "Hi",
+  "mods",
+  "info"
+];
 
 client.on('message', message => {
    let args = message.content.substring(PREFIX.length).split(" ");
@@ -52,6 +59,16 @@ client.on('message', message => {
        case 'testex':
            console.warn("Test Is Complete");
            console.exception("Test Is Complete");
+           break;
+
+       case 'info':
+           message.send('Author Is DevSamuel @github.com');
+           message.send(`${VERSION} Is the bot current version`);
+           break;
+
+       case 'help':
+           message.send('TO Call A Command Use ~');
+           message.send(`Command ${COMMANDS[0]} to say hi, Command ${COMMANDS[1]} To list mods, Command ${COMMANDS[2]} For bot info!`);
            break;
    }
 });
